@@ -15,7 +15,7 @@ class Slide extends Component {
   };
   
   static defaultProps = {
-    interval: 2000,//轮播间隔
+    interval: 4000,//轮播间隔
     loop: true,//是否循环
     autoPlay: true,//是否自动切换
     threshold: 0.35,

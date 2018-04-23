@@ -1,4 +1,5 @@
 import axios from 'axios'
+
 const URL = 'http://api.mtnhao.com';
 
 
@@ -12,4 +13,14 @@ export function getBanner() {
 export function getPersonalized() {
   const url = `${URL}/personalized`;
   return axios.get(url)
+}
+
+//获取用户歌单详情
+export function getUserPlaylist(uid = 344045107) {
+  const url = URL + '/user/playlist';
+  return axios.get(url, {
+    params: {
+      uid: uid
+    }
+  })
 }

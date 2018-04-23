@@ -33,7 +33,7 @@ class Scroll extends Component {
     return (
       <div className="scroll-wrapper" ref="scrollWrapper">
         {/*获取子组件*/}
-        {this.props.children}
+        <div>{this.props.children}</div>
       </div>
     )
   }

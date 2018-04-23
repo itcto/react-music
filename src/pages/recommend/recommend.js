@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Scroll from 'base/scroll/scroll'
 import Slide from 'base/slide/silde'
 import LcrList from 'components/lcr-list/lcr-list'
 import {getBanner, getPersonalized} from 'api'
@@ -39,26 +40,28 @@ class Recommend extends Component {
     const {personalized} = this.state;
     return (
       <div className="Recommend">
-        {this.state.banners && <div className="banner"><Slide ref="slide" data={this.state.banners}></Slide></div>}
-        <ul className="menu">
-          <li className="menu-item fm">
-            <div className="menu-icon"></div>
-            <p>私人FM</p>
-          </li>
-          <li className="menu-item daily">
-            <div className="menu-icon"></div>
-            <p>每日推荐</p>
-          </li>
-          <li className="menu-item playlist">
-            <div className="menu-icon"></div>
-            <p>歌单</p>
-          </li>
-          <li className="menu-item rank">
-            <div className="menu-icon"></div>
-            <p>排行榜</p>
-          </li>
-        </ul>
-        <LcrList title="推荐歌单" data={personalized}></LcrList>
+        <Scroll options={{bounce:false}}>
+          {this.state.banners && <div className="banner"><Slide ref="slide" data={this.state.banners}></Slide></div>}
+          <ul className="menu">
+            <li className="menu-item fm">
+              <div className="menu-icon"></div>
+              <p>私人FM</p>
+            </li>
+            <li className="menu-item daily">
+              <div className="menu-icon"></div>
+              <p>每日推荐</p>
+            </li>
+            <li className="menu-item playlist">
+              <div className="menu-icon"></div>
+              <p>歌单</p>
+            </li>
+            <li className="menu-item rank">
+              <div className="menu-icon"></div>
+              <p>排行榜</p>
+            </li>
+          </ul>
+          <LcrList title="推荐歌单" data={personalized}></LcrList>
+        </Scroll>
       </div>
     );
   }

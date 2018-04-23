@@ -15,14 +15,14 @@ class App extends Component {
         <div className="App">
           <div className="tab">
             <NavLink className="tab-item" to="/recommend">推荐</NavLink>
-            <NavLink className="tab-item" to="/find">发现</NavLink>
             <NavLink className="tab-item" to="/my">我的</NavLink>
+            <NavLink className="tab-item" to="/find">发现</NavLink>
           </div>
           <div className="tab-content">
             <Switch>
               <Route path="/recommend" component={Recommend}/>
-              <Route path="/find" component={Find}/>
               <Route path="/my" component={My}/>
+              <Route path="/find" component={Find}/>
               <Redirect to="/recommend"/>
             </Switch>
           </div>
