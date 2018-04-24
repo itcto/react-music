@@ -4,11 +4,11 @@ import 'assets/css/index.less';
 import App from 'pages/App';
 // import registerServiceWorker from './registerServiceWorker';
 
-if(document.querySelector("#appQd")){
-  setTimeout(()=>{
-    document.body.removeChild(document.querySelector("#appQd"))
-  },2000);
-}
+// if(document.querySelector("#appQd")){
+//   setTimeout(()=>{
+//     document.body.removeChild(document.querySelector("#appQd"))
+//   },2000);
+// }
 
 ReactDOM.render(<App />, document.getElementById('root'));
 // registerServiceWorker();

@@ -1,0 +1,52 @@
+@import "~assets/css/mixin.less";
+.mm-header {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+  background-color: #e5473c;
+  .mm-header-left {
+    position: absolute;
+    top: 45px;
+    left: 40px;
+    width: 70px;
+    height: 70px;
+    background-image: url("ov.png");
+    .bg-full();
+  }
+  .mm-header-title {
+    display: flex;
+    padding: 45px 290px;
+    .mm-header-item {
+      flex: 1;
+      height: 70px;
+      .bg-full(@s: cover);
+      &.discover{
+        background-image: url("t_actionbar_discover_normal.png");
+        &.active {
+          background-image: url("t_actionbar_discover_selected.png");
+        }
+      }
+      &.video{
+        background-image: url("t_actionbar_video_normal.png");
+        &.active {
+          background-image: url("t_actionbar_video_selected.png");
+        }
+      }
+      &.friends{
+        background-image: url("t_actionbar_friends_normal.png");
+        &.active {
+          background-image: url("t_actionbar_friends_selected.png");
+        }
+      }
+    }
+  }
+  .mm-header-right {
+    position: absolute;
+    top: 45px;
+    right: 33px;
+    width: 70px;
+    height: 70px;
+    background-image: url("pf.png");
+    .bg-full();
+  }
+}

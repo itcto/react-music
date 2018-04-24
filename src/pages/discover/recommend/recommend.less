@@ -7,7 +7,7 @@
   .banner {
     position: relative;
     height: 390px;
-    padding-top: 15px;
+    padding-top: 18px;
     &:before {
       content: '';
       position: absolute;
@@ -55,8 +55,21 @@
   .fm:active .menu-icon:before {
     .bg-url("~assets/img/recommend/t_recommend_icn_fm_prs.png")
   }
-  .daily .menu-icon:before {
-    .bg-url("~assets/img/recommend/t_recommend_icn_daily.png")
+  .daily {
+    .menu-icon {
+      &:before {
+        .bg-url("~assets/img/recommend/t_recommend_icn_daily.png")
+      }
+      &::after {
+        content: attr(data-date);
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        font-size: 26px;
+        color: #d33a31;
+        transform: translate(-50%, -50%);
+      }
+    }
   }
   
   .daily:active .menu-icon:before {

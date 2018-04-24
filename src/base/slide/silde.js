@@ -18,7 +18,7 @@ class Slide extends Component {
     interval: 4000,//轮播间隔
     loop: true,//是否循环
     autoPlay: true,//是否自动切换
-    threshold: 0.35,
+    threshold: 0.1,//滚动到下一个的阈值
     speed: 400,//动画速度
   };
   

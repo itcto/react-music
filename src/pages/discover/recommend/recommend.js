@@ -9,8 +9,9 @@ class Recommend extends Component {
   constructor(porps) {
     super(porps);
     this.state = {
-      banners: [],
-      personalized: []
+      banners: [],//banner数组
+      getDate: new Date().getDate(),//当前日期
+      personalized: [],//推荐歌单
     }
   }
   
@@ -37,7 +38,7 @@ class Recommend extends Component {
   }
   
   render() {
-    const {personalized} = this.state;
+    const {personalized,getDate} = this.state;
     return (
       <div className="Recommend">
         <Scroll options={{bounce:false}}>
@@ -48,7 +49,7 @@ class Recommend extends Component {
               <p>私人FM</p>
             </li>
             <li className="menu-item daily">
-              <div className="menu-icon"></div>
+              <div className="menu-icon" data-date={getDate}></div>
               <p>每日推荐</p>
             </li>
             <li className="menu-item playlist">

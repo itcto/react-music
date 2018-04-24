@@ -22,19 +22,22 @@ class My extends Component {
   }
   
   render() {
-    const {userList} = this.state.userList;
+    const {userList} = this.state;
     return (
       <div className="My">
-        {/*<Cell></Cell>*/}
         {
-          // userList.length > 0 && userList.map((item,index) => ({index}))
+          userList.length > 0 && userList.map((item) => {
+            return (
+              <li className="lcrlist-item" key={item.id}>
+                <div className="item-img">
+                  <img src={`${item.coverImgUrl}?param=200y200`} alt=""/>
+                </div>
+                <p className="item-title">{item.name.replace(/\s/g, ' ')}</p>
+                <span className="item-play">{item.playCount}</span>
+              </li>
+            )
+          })
         }
-        {/*{*/}
-          {/*data.length > 0 && data.map((item, index) => (*/}
-            {/*<span className={index === currentIndex ? 'dot on' : 'dot'} key={index}>{index}</span>*/}
-          {/*))*/}
-        {/*}*/}
-        我的
       </div>
     )
   }

@@ -1,31 +1,24 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route, Switch, Redirect, NavLink} from "react-router-dom"
-// import {Route, Switch, NavLink,Redirect} from "react-router-dom"
-// import {Router, Route, Redirect, Link} from 'react-router'
-import './App.less';
-
-import Recommend from 'pages/recommend/recommend'
-import Find from 'pages/find/find'
-import My from 'pages/my/my'
+import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom"
+import MmHeader from 'components/mm-header/mm-header'
+import Play from 'components/play/play'
+import Discover from 'pages/discover/discover'
+import Video from 'pages/video/video'
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
-          <div className="tab">
-            <NavLink className="tab-item" to="/recommend">推荐</NavLink>
-            <NavLink className="tab-item" to="/my">我的</NavLink>
-            <NavLink className="tab-item" to="/find">发现</NavLink>
-          </div>
-          <div className="tab-content">
+        <div className="App mm-music">
+          <MmHeader></MmHeader>
+          <main className="mm-main">
             <Switch>
-              <Route path="/recommend" component={Recommend}/>
-              <Route path="/my" component={My}/>
-              <Route path="/find" component={Find}/>
-              <Redirect to="/recommend"/>
+              <Route path="/discover" component={Discover}/>
+              <Route path="/video" component={Video}/>
+              <Redirect to="/discover"/>
             </Switch>
-          </div>
+          </main>
+          <Play></Play>
         </div>
       </Router>
     );

@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import {formatPlayCount} from 'common/util'
 import './lcr-list.less'
 
-
-
 const LcrList = (props) => {
   const {title, data} = props;
   return (
